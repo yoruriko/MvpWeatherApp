@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Singleton
     MainPresenter mainPresenter;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         initPresenter();
 //        initView();
     }
+
+
 
     @Override
     public void initPresenter() {
@@ -65,13 +68,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     protected void onResume() {
         super.onResume();
-        mainPresenter.onStart();
+        mainPresenter.viewStart();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mainPresenter.onStop();
+        mainPresenter.viewStart();
     }
 
     @Override
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showError(String msg) {
-        Toast.makeText(MainActivity.this,msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -109,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void hideProgressBar() {
         progress.setVisibility(View.GONE);
     }
-
 
 
 }
