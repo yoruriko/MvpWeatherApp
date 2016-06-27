@@ -5,4 +5,4 @@ Based on google's MVP example: https://github.com/googlesamples/android-architec
 
 Api From: http://www.weather.com.cn
 
-Example of a cityId: 101010100  Beijing
+Example of a cityId: 101010100
